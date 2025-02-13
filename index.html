@@ -1,0 +1,254 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Human-Robot Object Throwing and Catching Challenge @ CVPR2025</title>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="css/frame.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="css/controls.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="css/custom.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/footer.js"></script>
+  <style>
+    .menu-index {
+      color: rgb(255, 255, 255) !important;
+      opacity: 1 !important;
+      font-weight: 700 !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="menu-container"></div>
+  <div class="content-container">
+    <!-------------------------------------------------------------------------------------------->
+    <!--Start Header-->
+    <div class="banner" style="background: url('img/home_imageshome_video.mp4') no-repeat center; background-size:contain; height: 250px;"></div>
+    <div class="banner">
+      <div class="banner-table flex-column">
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 class="add-top-margin-small"> Human-Robot Object Throwing and Catching <br>
+               Challenge of MEIS Workshop @CVPR2025</h2>
+            <p class="text">
+              This challenge focuses on robot imitation learning from human collaborative skills of throwing and catching objects.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End Header-->
+    <!-------------------------------------------------------------------------------------------->
+    <div class="content">
+      <div class="content-table flex-column">
+        <!-------------------------------------------------------------------------------------------->
+        <!--Start Intro-->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <p class="text add-top-margin">
+<!--               With the rapid advancement of autonomous driving technology, vehicle-to-everything (V2X) 
+              communication has emerged as a key enabler for enhancing driving safety and efficiency. 
+              By allowing ego-vehicles to exchange real-time information with surrounding infrastructure 
+              and other road users, V2X communication extends perception capabilities beyond the line of 
+              sight and mitigates the limitations of onboard sensors. However, integrating multi-source 
+              sensor data from both ego-vehicles and infrastructure in a practical and efficient manner 
+              remains a challenging task, especially under constrained communication bandwidth. </br>
+              This challenge aims to tackle the problem of end-to-end autonomous driving with V2X cooperation 
+              by leveraging both ego-vehicle and infrastructure sensor data. Specifically, we formulate the 
+              problem as a planning-centric optimization, where multiple-view sensor inputs are fused to 
+              generate robust driving planning results. By addressing the complexities of sensor fusion and 
+              communication constraints, this challenge seeks to advance 
+              the state-of-the-art in cooperative autonomous driving. -->
+              This challenge involves the throwing and catching of various arbitrary objects, a skill that humans excel at. Once mastered by robots, this capability could significantly enhance productivity and efficiency in both human-robot and robot-robot collaboration across diverse open-world environments.
+              The challenge comprises two main tasks. The first task involves planning the position and speed required to throw an object, as well as the motion needed to reach the ready position for throwing, given the following conditions as the input: the object, the catcher’s position and the desired location in 3D space where the catcher intends to catch the object, such as above their head. The second task focuses on planning the position and hand pose for catching the object, along with the motion leading up to the moment of catching, given the following conditions as the input: the thrower’s movement and the egocentric view of capturing the object’s flight.
+            </p>
+            <h3>Table of Content</h3>
+            <ul>
+ <!--              <li><a href="#Perception-track">Track1: Temporal Perception</a></li>
+              <li><a href="#E2E-track">Track2: End-to-End AD</a></li> -->
+              <li><a href="#Timeline">Challenge Timeline</a></li>
+              <li><a href="#Award">Award Setting</a></li>
+              <li><a href="#Organizer_Committee">Organizer Committee</a></li>
+              <li><a href="#Related-work">Related Work</a></li>
+              <li><a href="#Contact">Contact</a></li>
+            </ul>
+            <!-- <h3>Challange Pre-Registration Link: <a href="https://forms.gle/tXWmT3EAhJqFKPGq5">here</a></h3> -->
+          </div>
+        </div>
+        <!-- End Intro-->
+        <!-------------------------------------------------------------------------------------------->
+<!--         <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 id="Perception-track">Track1: Temporal Perception</h2>
+            <hr>
+            <h3> Task Overview </h3>
+            <p class="text">
+              The Cooperative Temporal Perception Challenge focuses on advancing V2X-enabled detection and multi-object tracking. 
+              Built on the open-source UniV2X framework, this challenge provides participants with pre-recorded multi-view 
+              sensor data from both ego-vehicles and infrastructure. The primary objective is to leverage V2X communication 
+              to enhance temporal perception under bandwidth-constrained conditions. Participants are required to process the 
+              provided data to generate high-quality detection and tracking results. <br>
+              <b>Task Input</b>: Vehicle data (sequential images), Roadside data (sequential images), and corresponding time stamps and calibration files. <br>
+              <b>Task Output</b>: 3D position, heading angel, tracking ID.
+            </p>
+            <h3>Evaluation</h3>
+            <p class="text">
+              Participants' solutions will be assessed based on three common metrics: mAP, AMOTA, and transmission cost. <br>
+              The final evaluation score for this track will be the weighted average of these three indicators after normalization, 
+              with weights of 0.4, 0.4, and 0.2, respectively.
+            </p>
+            <h3>Baseline and Data Illustration</h3>
+            <p class="text">
+              UniV2X provides a baseline for cooperative temporal perception in autonomous driving systems. <br>
+              The code is open-sourced in <a href="https://github.com/AIR-THU/UniV2X">this page</a>. <br>
+              The dataset is based on V2X-Seq-SPD, you may see more details 
+              <a href="https://github.com/AIR-THU/UniV2X/blob/main/docs/DATA_PREP.md">here</a>.
+            </p>
+          </div>
+        </div>
+        ----------------------------------------------------------------------------------------
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 id="E2E-track">Track2: End-to-End AD</h2>
+            <hr>
+            <h3> Task Overview </h3>
+            <p class="text">
+              The Cooperative End-to-End Autonomous Driving Challenge aims to advance V2X-enabled end-to-end autonomous driving. 
+              Built on the open-source UniV2X framework, this challenge allows participants to develop and test end-to-end 
+              autonomous driving agents through V2X cooperation. The goal is to optimize driving policies that seamlessly 
+              integrate ego-vehicle and infrastructure sensor data, enabling adaptive planning in complex urban environments.<br>
+              <b>Task Input</b>: Vehicle data (sequential images), Roadside data (sequential images), and corresponding time stamps and calibration files. <br>
+              <b>Task Output</b>: planning results (waypoints of future 5 seconds).
+            </p>
+            <h3>Evaluation</h3>
+            <p class="text">
+              Participants' solutions will be assessed based on four metrics: L2 error, Collision Rate, Off-road Rate, and Transmission Cost.
+              The final evaluation score for this track will be the weighted average of these four indicators after normalization, 
+              with weights of 0.3, 0.3, 0.2 and 0.2, respectively.
+            </p>
+            <h3>Baseline and Codebase</h3>
+            <p class="text">
+              UniV2X is the first cooperative end-to-end autonomous driving framework that seamlessly integrates all 
+              key driving modules across diverse driving perspectives into a unified network. <br>
+              The code is open-sourced in <a href="https://github.com/AIR-THU/UniV2X">this page</a>. <br>
+              The dataset is based on V2X-Seq-SPD, you may see more details 
+              <a href="https://github.com/AIR-THU/UniV2X/blob/main/docs/DATA_PREP.md">here</a>.
+            </p>
+          </div>
+        </div> -->
+        <!-------------------------------------------------------------------------------------------->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 id="Timeline">Challenge Timeline</h2>
+            <hr>
+            <ul>
+              <li>Release of the test dataset: March 15, 2025</li>
+              <li>Submission Instruction: March 15, 2025</li>
+              <li>Submission open: April 10, 2025</li>
+              <li>Submission deadline: May 28, 2025</li>
+              <li>Decision to authors: June 4, 2025</li>
+            </ul>
+          </div>
+        </div>
+        <!-------------------------------------------------------------------------------------------->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 id="Award">Award Setting</h2>
+            <hr>
+            <ul>
+              <li><img src="./img/85556_gold_trophy_icon.png" alt="Figure of gold" width="20" height="20"></img>Outstanding Champion, USD $1500</li>
+              <li><img src="./img/85557_silver_trophy_icon.png" alt="Figure of silver" width="20" height="20">Honorable Runner-up, USD $1000</li>
+              <li><img src="./img/85555_bronze_trophy_icon.png" alt="Figure of bronze" width="20" height="20">Exceptional Merit Award, USD $500</li>
+            </ul>
+          </div>
+        </div>
+        <!-------------------------------------------------------------------------------------------->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 id="Organizer_Committee">Organizer Committee</h2>
+            <hr>
+            <div class="gallery add-top-margin-small add-bottom-margin-small">
+<!--               <div class="flex-column">
+                <img src="img/JQ.jpg">
+                <h3>Jianing Qiu</h3>
+                <div>Organizer</div>
+                <div>
+                  <a href="https://ry-hao.top/" target="_blank">Website</a>
+                  &nbsp;|&nbsp;
+                  <a href="https://www.linkedin.com/in/ryhn-hao/" target="_blank">LinkedIn</a>
+                </div>
+              </div> -->
+              <div class="flex-column">
+                <img src="img/JQ.jpg">
+                <h3>Jianing Qiu</h3>
+                <div>Organizer</div>
+                <div>
+                  <a href="https://scholar.google.com/citations?user=ETgWwQoAAAAJ&hl=en&oi=ao" target="_blank">Website</a>
+                </div>
+              </div>
+              <div class="flex-column">
+                <img src="img/LinLi.jpg">
+                <h3>Lin Li</h3>
+                <div>Organizer</div>
+                <div>
+                  <a href="https://treelli.github.io/" target="_blank">Website</a>
+                </div>
+              </div>
+              <div class="flex-column">
+                <img src="img/lipengchen.gif">
+                <h3>Lipeng Chen</h3>
+                <div>Organizer</div>
+                <div>
+                  <a href="https://ieeexplore.ieee.org/author/37086579788" target="_blank">Website</a>
+                </div>
+              </div>
+
+
+<!--               <div class="flex-column">
+                <img src="img/haibao_yu.jpg">
+                <h3>Haibao Yu</h3>
+                <div>Committee Member</div>
+                <div>
+                  <a href="https://github.com/haibao-yu/" target="_blank">Website</a>
+                  &nbsp;|&nbsp;
+                  <a href="https://www.linkedin.com/in/haibao-yu-152221118/" target="_blank">LinkedIn</a>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+        <!-------------------------------------------------------------------------------------------->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 id="Related-work">Related Work</h2>
+            <hr>
+            <ul>
+              <li><a href="https://journals.sagepub.com/doi/10.1177/02783649241275674">H2TC</a>, The International Journal of Robotics Research</li>
+<!--               <li><a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Yu_DAIR-V2X_A_Large-Scale_Dataset_for_Vehicle-Infrastructure_Cooperative_3D_Object_Detection_CVPR_2022_paper.pdf">DAIR-V2X</a>, CVPR 2022</li> -->
+            </ul>
+          </div>
+        </div>
+        <!-------------------------------------------------------------------------------------------->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2 id="Contact">Contact</h2>
+            <hr>
+            <ul>
+              <li>Jianing QIU, email: jianing.qiu@outlook.com</li>
+              <!-- <li>Track1 Support: Jiaru Zhong, BIT, email: zhongjiaru@bit.edu.cn</li> -->
+              <!-- <li>Track2 Support: Haibao Yu, HKU, email: yuhaibao94@gmail.com</li> -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-container"></div>
+  </div>
+</body>
+
+</html>
